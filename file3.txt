@@ -1,0 +1,11 @@
+from fastapi import FastAPI
+
+from pydantic import BaseModel
+
+class user(BaseModel):
+	email:str
+	pwd:int
+
+@app.post("/data")
+def create(x:user):
+	return {"data":x}
